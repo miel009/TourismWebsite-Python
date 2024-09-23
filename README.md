@@ -7,9 +7,9 @@
     
 </head>
 <body>
-     <h1> Sistema de Gestión de Destinos Turísticos </h1>
+    <h2> Sistema de Gestión de Destinos Turísticos </h2>
     <h2> 1. Objetivo </h2>
-    <p> Este documento describe los requisitos del sistema para la migración y mejora del sistema de gestión de destinos turísticos de la agencia. El objetivo es proporcionar una plataforma más completa y accesible tanto para los usuarios finales como para los encargados de turismo y ventas, mejorando la experiencia de planificación y reserva mediante la personalización de itinerarios, la gestión integral de destinos y la implementación de recomendaciones automáticas.</p>
+    <p> Este documento describe los requisitos del sistema para la migración y mejora del sistema de gestión de destinos turísticos de la agencia TravelEasy. El objetivo es proporcionar una plataforma más completa y accesible tanto para los usuarios finales como para los encargados de turismo y ventas, mejorando la experiencia de planificación y reserva mediante la personalización de itinerarios, la gestión integral de destinos y la implementación de recomendaciones automáticas.</p>
     <h2>2. Beneficios: </h2>
     <p>Para los usuarios finales: Simplifica la búsqueda y la reserva de viajes al proporcionar una plataforma integral 3 que ofrece información detallada y recomendaciones en cada destino. La plataforma ofrece desde destinos, paquetes, hasta servicios adicionales como traslados, facilitando así la toma de decisiones y mejorando la experiencia del usuario para la reserva final. 
         En el caso de que el usuario final prefiera un asesoramiento personalizado, deberá suscribirse. Se podrá llevar a cabo mediante el formulario de contacto (luego será llamado por el sector de ventas) o físicamente en la sede correspondiente, en el cual, el encargado de ventas brindará un asesoramiento particular para adecuarse a los requerimientos del usuario final/pasajero y realizar la reserva.

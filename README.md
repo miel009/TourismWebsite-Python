@@ -52,7 +52,7 @@
         RNF2.2: La seguridad de las reservas debe garantizarse mediante el acceso restringido.
         RNF2.3: La interfaz de usuario debe ser fácil de usar, moderna y adaptada al flujo de trabajo del equipo de ventas.
        </p>
-    <h2>6.3 Módulo del Cliente Final/Pasajero.</h2>
+    <h2>6.3 Módulo del Usuario Final/Pasajero.</h2>
     <h3>6.3.1 Requisitos funcionales</h3>
     <p> RF3.1: Los clientes podrán buscar y comparar destinos turísticos, visualizar información detallada sobre cada uno y seleccionar aquellos que se ajusten a sus preferencias.
         RF3.2: El sistema permitirá a los usuarios finales crear itinerarios personalizados, combinando destinos, actividades, traslados y alojamiento.

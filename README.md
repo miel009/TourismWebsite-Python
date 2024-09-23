@@ -80,7 +80,7 @@
     <h2>Diagrama de clases </h2>
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/1f451362-4ea7-46c9-a46b-eb8b40e481cf">
    <h2>Logo</h2> 
-    <img  width="362" class="LogoNineT" src="assets/img/logotex.png" alt="logo">
+    <img width="418" alt="image" src="https://github.com/user-attachments/assets/c10aecd2-2c8e-4ecb-b134-d47193893c55">
    <p>
     La combinación de rojo y azul en el 
     logo crea un equilibrio perfecto entre 

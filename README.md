@@ -14,7 +14,7 @@
 <img width="811" alt="image" src="https://github.com/user-attachments/assets/0e37a017-ad43-4ef6-9ec8-356c7b15967c">
 <h2>2. Beneficios </h2>
 <p>Para los usuarios finales: Simplifica la búsqueda y la reserva de viajes al proporcionar una plataforma integral 3 que ofrece información detallada y recomendaciones en cada destino. La plataforma ofrece desde destinos, paquetes, hasta servicios adicionales como traslados, facilitando así la toma de decisiones y mejorando la experiencia del usuario para la reserva final. 
-        En el caso de que el usuario final prefiera un asesoramiento personalizado, deberá suscribirse. Se podrá llevar a cabo mediante el formulario de contacto (luego será llamado por el sector de ventas) o físicamente en la sede correspondiente, en el cual, el encargado de ventas brindará un asesoramiento particular para adecuarse a los requerimientos del usuario final/pasajero y realizar la reserva.
+En el caso de que el usuario final prefiera un asesoramiento personalizado, deberá suscribirse. Se podrá llevar a cabo mediante el formulario de contacto (luego será llamado por el sector de ventas) o físicamente en la sede correspondiente, en el cual, el encargado de ventas brindará un asesoramiento particular para adecuarse a los requerimientos del usuario final/pasajero y realizar la reserva.
         Para la  empresa: optimiza la gestión y creación de destinos turísticos, agilizando las tareas diarias del encargado de turismo y el personal de ventas. Esto permite ofrecer una amplia variedad de opciones a los usuarios finales, mejorando la capacidad de la empresa para satisfacer sus necesidades y preferencias.
        </p>
     <h2>3.Alcance</h2> 
@@ -87,11 +87,11 @@
     emoción y confianza, ideal para 
     transmitir a los usuarios que visitan
     la página. 
-    <strong>DETALLES DE LOS COLORES: </strong>
-    <strong>Rojo:</strong> este color evoca pasión, energía,
-    emoción y aventura. Transmite una sensación de urgencia y deseo de experimentar nuevas cosas. Además, suele asociarse con la acción y la toma de decisiones, lo que puede impulsar a los usuarios a reservar sus viajes.
-    <strong>Azul:</strong>es un color que transmite calma, confianza, estabilidad y fiabilidad. Representa el cielo y el mar, elementos estrechamente vinculados a los viajes. El azul también se asocia con la inteligencia y la comunicación, haciendo que la plataforma parezca intuitiva y segura de usar.
-    En conclusión, el rojo impulsa a los usuarios a explorar y reservar, mientras que el azul les brinda la seguridad de que están tomando una buena decisión. Esto se alinea perfectamente con tu objetivo de proporcionar una plataforma más completa y accesible, mejorando la experiencia de planificación y reserva
+    <p><strong>DETALLES DE LOS COLORES: </strong></p>
+    <p><strong>Rojo:</strong> este color evoca pasión, energía,
+    emoción y aventura. Transmite una sensación de urgencia y deseo de experimentar nuevas cosas. Además, suele asociarse con la acción y la toma de decisiones, lo que puede impulsar a los usuarios a reservar sus viajes.</p>
+    <p><strong>Azul:</strong>es un color que transmite calma, confianza, estabilidad y fiabilidad. Representa el cielo y el mar, elementos estrechamente vinculados a los viajes. El azul también se asocia con la inteligencia y la comunicación, haciendo que la plataforma parezca intuitiva y segura de usar.</p>
+    <p>En conclusión, el rojo impulsa a los usuarios a explorar y reservar, mientras que el azul les brinda la seguridad de que están tomando una buena decisión. Esto se alinea perfectamente con tu objetivo de proporcionar una plataforma más completa y accesible, mejorando la experiencia de planificación y reserva</p>
 </p>
     <h2>8.1 Conclusión</h2>
     <p> 

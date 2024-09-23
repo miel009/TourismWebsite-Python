@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2> Sistema de Gestión de Destinos Turísticos </h2>
+    <img width="418" alt="image" src="https://github.com/user-attachments/assets/c10aecd2-2c8e-4ecb-b134-d47193893c55">
     <h2> 1. Objetivo </h2>
     <p> Este documento describe los requisitos del sistema para la migración y mejora del sistema de gestión de destinos turísticos de la agencia TravelEasy. El objetivo es proporcionar una plataforma más completa y accesible tanto para los usuarios finales como para los encargados de turismo y ventas, mejorando la experiencia de planificación y reserva mediante la personalización de itinerarios, la gestión integral de destinos y la implementación de recomendaciones automáticas.</p>
 <h3> Mejoras propuestas </h3>

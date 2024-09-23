@@ -79,6 +79,19 @@
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/528e2606-51d6-49ba-bb06-d164d55e16fe">
     <h2>Diagrama de clases </h2>
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/1f451362-4ea7-46c9-a46b-eb8b40e481cf">
+   <h2>Logo</h2> ![image](https://github.com/user-attachments/assets/2578edca-a047-4dbf-8254-30a73f93b665)
+   <p>
+    La combinación de rojo y azul en el 
+    logo crea un equilibrio perfecto entre 
+    emoción y confianza, ideal para 
+    transmitir a los usuarios que visitan
+    la página. 
+    <strong>DETALLES DE LOS COLORES: </strong>
+    <strong>Rojo:</strong> este color evoca pasión, energía,
+    emoción y aventura. Transmite una sensación de urgencia y deseo de experimentar nuevas cosas. Además, suele asociarse con la acción y la toma de decisiones, lo que puede impulsar a los usuarios a reservar sus viajes.
+    <strong>Azul:</strong>es un color que transmite calma, confianza, estabilidad y fiabilidad. Representa el cielo y el mar, elementos estrechamente vinculados a los viajes. El azul también se asocia con la inteligencia y la comunicación, haciendo que la plataforma parezca intuitiva y segura de usar.
+    En conclusión, el rojo impulsa a los usuarios a explorar y reservar, mientras que el azul les brinda la seguridad de que están tomando una buena decisión. Esto se alinea perfectamente con tu objetivo de proporcionar una plataforma más completa y accesible, mejorando la experiencia de planificación y reserva
+</p>
     <h2>8.1 Conclusión</h2>
     <p> 
     El nuevo sistema  proporcionará una experiencia completa y personalizada tanto para los clientes finales como para el personal interno de la agencia. La integración de 

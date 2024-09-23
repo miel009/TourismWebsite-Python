@@ -77,5 +77,11 @@
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/528e2606-51d6-49ba-bb06-d164d55e16fe">
     <h2>Diagrama de clases </h2>
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/1f451362-4ea7-46c9-a46b-eb8b40e481cf">
+    <h2>8.1 Conclusión</h2>
+    <p> 
+    El nuevo sistema  proporcionará una experiencia completa y personalizada tanto para los clientes finales como para el personal interno de la agencia. La integración de 
+    nuevas funcionalidades como la personalización de itinerarios, las recomendaciones automáticas y la mejora de seguridad garantizará una experiencia de usuario óptima y 
+    una mayor eficiencia en la gestión de destinos turísticos.
+    </p>
 </body>
 </html>

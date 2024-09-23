@@ -79,7 +79,8 @@
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/528e2606-51d6-49ba-bb06-d164d55e16fe">
     <h2>Diagrama de clases </h2>
     <img width="362" alt="image" src="https://github.com/user-attachments/assets/1f451362-4ea7-46c9-a46b-eb8b40e481cf">
-   <h2>Logo</h2> ![image](https://github.com/user-attachments/assets/2578edca-a047-4dbf-8254-30a73f93b665)
+   <h2>Logo</h2> 
+    <img  width="362" class="LogoNineT" src="assets/img/logotex.png" alt="logo">
    <p>
     La combinación de rojo y azul en el 
     logo crea un equilibrio perfecto entre 

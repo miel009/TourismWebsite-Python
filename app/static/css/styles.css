@@ -1,0 +1,437 @@
+:root {
+    --bg-color: #1466c3;
+    --secundary-color: #b10005;
+    --three-color: #014ba0;
+    --four-color: #DBD8E3;
+    --five-color: #352f44;
+}
+
+#menu_list .bi {
+    font-size: 1rem; /* Ajusta el tamaño del icono */
+    color: #333; /* Cambia al color que prefieras */
+    text-align: center;
+    background-color: transparent !important;
+}
+ 
+#reserva-card{
+    margin-top: 2rem;
+}
+main {
+    padding: 0px;
+    margin: 0px;
+    min-height: calc(130vh - 230px); /* Ajusta 200px según el tamaño del header y footer */
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; 
+}
+
+
+h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--bg-color);
+    text-align: center;
+}
+
+p {
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+}
+
+header{
+    background-color:var(--four-color);
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    height: 40%;
+}
+
+#LogoNineT {
+    height: 70px;
+    padding-left: 15px; /*espaciado a la ->*/
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    font-family: "Roboto Condensed", sans-serif;
+    
+}
+
+nav ul {
+    list-style: none;
+    text-align: left;
+    padding-right: 15px; /*espaciado a la ->*/
+}
+
+nav li {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--five-color);
+}
+
+.cards-container {
+    justify-content: center;
+}
+/*preguntas frecuenets*/
+main{
+    background-color: var(--four-color);
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0px;
+}
+
+.containerPreg {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*del h2 del index*/
+.descripcion { 
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--bg-color);
+    text-align: center;
+    border-bottom: 3px solid;
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.preg { 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--bg-color);
+    text-align: center;  
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.p-seguinos {
+    font-weight: bold; 
+    font-size: 1.2rem;
+    color: var(--secundary-color);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.parrafo-index {
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.accordion-button {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    font-weight: bold;
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #0d6efd;
+    background-color: #e9ecef;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+.accordion-body {
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding-top: 10px;
+    
+}
+
+.contenedor-noticia-card{
+padding-bottom: 2rem;
+margin-right: 3rem;
+margin-left: 3rem;
+}
+
+.horizontal-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.horizontal-card:hover {
+    transform: translateY(-10px);
+}
+
+.horizontal-card .card-img-left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+
+.horizontal-card .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 100%; 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.ver-todas-link {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.ver-todas-link:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color: var(--three-color);
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--four-color);
+    
+}
+.conteiner-footer{
+    margin-left: 1rem;
+    padding-top: 1rem;  
+}
+footer .text-center {
+    padding-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+footer li {
+    display: inline-block;
+    list-style: none;
+}
+
+.icono-foter {
+    color: var(--four-color);
+    text-align: center;
+}
+
+footer .pie {
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
+
+footer a:hover {
+    color: #0d6efd;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    /* Eliminar padding por defecto */
+}
+
+form {
+    max-width: 500px; /* Limitar ancho del formulario */
+    margin: 20px auto; /* Centrar el formulario */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco para el formulario */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+}
+
+label {
+    display: block; /* Asegurarse de que cada etiqueta esté en su propia línea */
+    margin-bottom: 5px; /* Espacio entre etiqueta y campo */
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio entre campos */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+input[type="submit"],
+button {
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
+.error {
+    color: red; /* Color rojo para mensajes de error */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+/* destinos */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-gap: 10px; /* Espacio entre las imágenes */
+    width: 95%; /* Ajusta el ancho del contenedor según sea necesario */
+    margin: auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden; /* Para asegurarse de que las imágenes no se salgan del contenedor */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar legibilidad */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados, opcional */
+    text-align: center; /* Centrar el texto */
+    width: 80%; /* Ajustar según sea necesario */
+    font-size: 50px;
+}
+
+.slider-scrollbar, .slide-button{
+    display: none;
+}
+
+#h1-destinos{
+    text-align: center;
+    color: green;
+    font-size: 49px;
+    margin-bottom: 50px;
+}
+
+#h2-destinos{
+    text-align: center;
+    color: green;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.card-destinos {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 500px;
+    transition: transform 0.3s;
+}
+
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.container-destinos{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.text {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados, opcional */
+    text-align: center; /* Centrar el texto */
+    width: 80%; /* Ajustar según sea necesario */
+    font-size: 25px;
+}
+
+.text1 {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    text-align: center; /* Centrar el texto */
+    font-size: 25px;
+}
+
+.enlace {
+    position: absolute;
+    bottom: 1%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    text-align: center; /* Centrar el texto */
+    font-size: 25px;
+}
+
+a{
+    color: rgb(189, 6, 6);
+    text-decoration: none;
+}
+
+/*paquetes*/
+#h1-paquetes {
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--five-color);
+    box-sizing: border-box;
+    text-align: center;
+}
+

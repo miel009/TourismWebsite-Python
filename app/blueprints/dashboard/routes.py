@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, url_for, redirect
 import requests
 from config import HEADEARS, JSONBIN_URL_DESTINOS
 
@@ -11,7 +11,7 @@ def dashboard():
 
 @dashboard_bp.route('/destinos')
 def dashboarddestinos():
-    return render_template('dashboard/destinos.html')
+   return render_template('dashboard/destinos.html')
 
 @dashboard_bp.route('/reserva')
 def dashboardreserva():

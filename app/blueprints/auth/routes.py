@@ -21,7 +21,7 @@ def register():
         if not username or not password:
             return jsonify({'mensaje': 'No puede ser vacío'}), 400
 
-        # Obtener datos de JSONBin
+        # Obtenemos datos de JSONBin
         response = requests.get(JSONBIN_URL_USUARIOS, headers=HEADEARS)
         if response.status_code != 200:
             return jsonify({'mensaje': 'Error al obtener datos'}), 500
@@ -30,21 +30,15 @@ def register():
         data = response.json()
         print("Contenido de la respuesta JSON:", data)  # Muestra toda la estructura
 
-        # Comprobación de  'record' 
+        # Comprobación de 'record' en el nivel principal
         if 'record' not in data:
-            return jsonify({'mensaje': 'El JSON no contiene el primer nivel de "record"'}), 500
+            return jsonify({'mensaje': 'El JSON no contiene "record"'}), 500
 
-        if not isinstance(data['record'], dict):
-            return jsonify({'mensaje': 'El primer nivel de "record" no es un diccionario'}), 500
+        if not isinstance(data['record'], list):
+            return jsonify({'mensaje': '"record" no es una lista'}), 500
 
-        if 'record' not in data['record']:
-            return jsonify({'mensaje': 'El segundo nivel de "record" no está presente en el JSON'}), 500
-
-        if not isinstance(data['record']['record'], list):
-            return jsonify({'mensaje': 'El segundo nivel de "record" no es una lista'}), 500
-
-        # Asigna user
-        users = data['record']['record']
+        # Asigna users directamente desde 'record'
+        users = data['record']
 
         # Verificar si el usuario ya existe
         for user in users:
@@ -58,8 +52,8 @@ def register():
         }
         users.append(nuevo)
 
-        # Actualizar datos en JSONBin 
-        response = requests.put(JSONBIN_URL_USUARIOS, json={{'record': users}}, headers=HEADEARS)
+        # Actualizar datos en JSONBin
+        response = requests.put(JSONBIN_URL_USUARIOS, json={'record': users}, headers=HEADEARS)
         if response.status_code == 200:
             return render_template("auth/register.html")
         else:

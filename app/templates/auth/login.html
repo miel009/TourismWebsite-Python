@@ -4,27 +4,16 @@
 
 {% block content %}
     <h2>Login Page</h2>
+    <div class="conteiner">  
+    <form method="POST">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required>
 
-    <!-- Mostrar mensajes de error -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul class="flashes">
-                {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
 
-    <div class="container">  
-        <form method="POST">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
-    </div>
+        <button type="submit"><a href="{{ url_for('auth.ingreso') }}" style="color: white; text-decoration: none;"> Lo quiero!</a> </button>
+        
+    </form>
+ </div>
 {% endblock %}

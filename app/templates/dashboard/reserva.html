@@ -2,16 +2,24 @@
 
 {% block content %}
 <h2>Reservas</h2>
-
-<!-- crear una nueva reserva 
-
--->
-<!--  mostrar las reservas 
-
--->
-
-<!--  eliminar las reservas 
-
--->
-
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reserva in reservas %}
+        <tr>
+            <td>{{ reserva[0] }}</td>
+            <td>{{ reserva[1] }}</td>
+            <td>{{ reserva[2] }}</td>
+            <td><button>Eliminar</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

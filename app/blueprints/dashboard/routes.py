@@ -2,10 +2,11 @@ from flask import Blueprint, render_template, request, jsonify, url_for, redirec
 import requests
 from config import HEADEARS, JSONBIN_URL_DESTINOS
 from flask_mysqldb import MySQL
+import MySQLdb
 
-dashboard_bp = Blueprint('dashboard', __name__)
 mysql = MySQL()
 
+dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/')
 def dashboard():
@@ -31,27 +32,33 @@ def dashboardpaquetes():
 def format_price(value):
     return "{:,.2f}".format(value).replace(",", "X").replace(".", ",").replace("X", ".")
 
-
-
 @dashboard_bp.route('/reserva', methods=['GET'])
 def dashboardreserva():
+    import MySQLdb
     try:
-        mysql = current_app.extensions['mysql']  # Acceder al objeto MySQL
+        # Usar la instancia global de mysql
         cursor = mysql.connection.cursor()
         cursor.execute("SELECT * FROM reservas")
-        reservas = cursor.fetchall()  # RESERVAS
+        reservas = cursor.fetchall()
         cursor.close()
-        
-        return render_template('reserva.html', reservas=reservas)
+        return render_template('dashboard/reserva.html', reservas=reservas)
     except Exception as e:
         return f"Error al acceder a la base de datos: {e}", 500
 
-@dashboard_bp.route('/test_db')
-def test_db():
+
+@dashboard_bp.route('/test_mysql')
+def test_mysql():
+    import MySQLdb
     try:
-        cursor = mysql.connection.cursor()
-        cursor.execute("SELECT * FROM reservas")
-        cursor.close()
-        return "Conexión a la base de datos exitosa"
+        conn = MySQLdb.connect(
+            host="localhost",
+            user="root",
+            passwd="",
+            db="tourism"
+        )
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1")
+        conn.close()
+        return "Conexión exitosa a MySQL"
     except Exception as e:
-        return f"Error de conexión: {str(e)}"
+        return f"Error al conectar a MySQL: {str(e)}", 500

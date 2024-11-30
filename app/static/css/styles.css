@@ -6,17 +6,104 @@
     --five-color: #352f44;
 }
 
+/*tabla*/
+/* Aplica bordes curvos a toda la tabla */
+table {
+    border-collapse: separate; /* Necesario para que funcione el border-radius */
+    border-spacing: 0; /* Elimina el espacio entre bordes */
+    border-radius: 10px; /* Ajusta el radio de los bordes */
+    overflow: hidden; /* Asegura que el contenido respete los bordes curvos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+}
+
+/* Estilo general de las celdas */
+table th, table td {
+    padding: 10px; /* Espaciado dentro de las celdas */
+    text-align: center; /* Centrado del contenido */
+    border: 1px solid #ddd; /* Bordes sutiles */
+}
+
+/* Cabecera de la tabla */
+table thead th {
+    background-color: #007bff; /* Color azul para el encabezado */
+    color: white; /* Texto blanco */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Filas alternas */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo gris claro */
+}
+
+/* Filas al pasar el mouse */
+table tbody tr:hover {
+    background-color: #f1f1f1; /* Fondo más oscuro */
+    cursor: pointer; /* Cambia el cursor al pasar */
+}
+
+/* Bordes curvos solo en las esquinas */
+table thead th:first-child {
+    border-top-left-radius: 10px;
+}
+table thead th:last-child {
+    border-top-right-radius: 10px;
+}
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+
+/* Asegura que el formulario no cause problemas de diseño */
+td form {
+    display: inline-block; /* Mantiene el formulario en línea */
+    margin: 0;            /* Sin margen */
+    padding: 0;           /* Sin relleno */
+    box-shadow: none;     /* Sin sombra */
+}
+
+/* Estilo específico para el botón */
+.eliminar-btn {
+    background-color: #dc3545 !important; /* Color rojo de Bootstrap */
+    color: white !important;             /* Texto blanco */
+    border: none !important;             /* Sin borde */
+    padding: 5px 10px !important;        /* Tamaño compacto */
+    font-size: 14px !important;          /* Tamaño del texto */
+    cursor: pointer;                     /* Cambia el cursor a puntero */
+}
+
+/* Hover para el botón */
+.eliminar-btn:hover {
+    background-color: #c82333 !important; 
+    color: #fff !important;              
+}
+
+/* ajuste  celda  al contenido */
+td {
+    vertical-align: middle !important; 
+    padding: 5px !important;          
+    text-align: center;                
+}
+
 #menu_list .bi {
     font-size: 1rem; /* Ajusta el tamaño del icono */
     color: #333; /* Cambia al color que prefieras */
     text-align: center;
     background-color: transparent !important;
 }
- 
-#reserva-card{
-    margin-top: 2rem;
+
+#mis {
+    margin-top: 0 !important; /* Elimina margen superior del título */
+    padding: 2rem;
 }
+#formR{
+    padding-top: 5rem;
+}
+
 main {
+
     padding: 0px;
     margin: 0px;
     min-height: calc(130vh - 230px); /* Ajusta 200px según el tamaño del header y footer */

@@ -2,12 +2,12 @@
 {% block content %}
 <h2>Paquetes Disponibles</h2>
 
-    {% if paquetes %}
-    <div class="container">
-        <div class="row">
-    {% for paquete in paquetes %}
-         
-        <!-- <div><h2> {{paquete.titulo}} </h2> --> 
+{% if paquetes %}
+<div class="container">
+    <div class="row">
+        {% for paquete in paquetes %}
+
+        <!-- <div><h2> {{paquete.titulo}} </h2> -->
         <div class="col-md-4 mb-4">
             <div class="card-paquetes">
                 <div class="card-body">
@@ -18,16 +18,19 @@
                         <span class="badge bg-secondary">{{ paquete.incluye | join(', ') }}</span>
                     </div>
                     <div class="price mt-2"> $ {{ paquete.precio_por_persona | format_price}}</div>
-                    <div class="button mt-2 "></a><button class="btn btn-primary me-md-2"> <a href="{{ url_for('dashboard.dashboardreserva') }}" style="color: white; text-decoration: none;"> Lo quiero!</a>  </button> </div>
-                    
+                    <div class="button mt-2 "> <a
+                            href="{{ url_for('dashboard.dashboardreserva',paquete_id=paquete.id, destino=paquete.destino, duracion=paquete.duracion, precio=paquete.precio_por_persona) }}"
+                            class="btn btn-primary me-md-2" style="color: white; text-decoration: none;">Lo quiero!</a>
+                        </button> </div>
+
                 </div> <!-- 5:card-body -->
             </div> <!-- 4:card-paquetes -->
         </div> <!-- 3: col-md-4 mb-4-->
-    <!--</div> -->
+       
         {% endfor %}
     </div> <!-- row-->
-    </div> <!-- container -->
-    {% else %}
-        <h1>no hay paquetes</h1>
-    {% endif %}
+</div> <!-- container -->
+{% else %}
+<h1>no hay paquetes</h1>
+{% endif %}
 {% endblock %}

@@ -4,9 +4,6 @@ import requests
 from config import HEADEARS, JSONBIN_URL_DESTINOS
 import mysql.connector 
 
- # Conector compatible con XAMPP
-
-
 dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/')
@@ -38,19 +35,18 @@ def format_price(value):
 @dashboard_bp.route('/listareserva', methods=['GET', 'POST'])
 def dashboardlistareserva():
     try:
-        # Conectar a la base de datos MySQL
         connection = mysql.connector.connect(
-            host='localhost',           # Servidor (localhost en XAMPP)
-            user='root',                # Usuario de MySQL (por defecto en XAMPP)
-            password='',                # Contraseña (vacía por defecto en XAMPP)
-            database='tourism'          # Cambia por el nombre de tu base de datos
+            host='localhost',           
+            user='root',                
+            password='',               
+            database='tourism'          
         )
         cursor = connection.cursor()
 
-        # Consulta SQL para obtener todas las reservas
-        sql = "SELECT id, nombre, email, nombre_destino, fecha_reserva, numero_personas, precio FROM reservas"
+       
+        sql = "SELECT id, nombre, email, nombre_destino, fecha_reserva, numero_personas, precio_total, imagen FROM reservas"
         cursor.execute(sql)
-        reservas = cursor.fetchall()  # Obtener todas las filas de resultados
+        reservas = cursor.fetchall()  # obtenemos todas las filas de resultados
 
         return render_template('dashboard/listareserva.html', reservas=reservas)
 
@@ -59,7 +55,7 @@ def dashboardlistareserva():
         return render_template('dashboard/listareserva.html')
 
     finally:
-        # Cerrar conexión y cursor
+        # cerrar 
         cursor.close()
         connection.close()
 
@@ -68,57 +64,78 @@ def dashboardlistareserva():
 @dashboard_bp.route('/reserva', methods=['GET', 'POST'])
 def dashboardreserva():
     if request.method == 'POST':
-        # Obtener datos del formulario
         nombre = request.form.get('nombre')
         email = request.form.get('email')
-        nombre_destino = request.form.get('nombre_destino')
-        fecha_reserva = request.form.get('fecha_reserva')
-        numero_personas = request.form.get('numero_personas')
+        paquete_id_str = request.form.get('paquete_id')
 
-        # Calcular precio (ejemplo: 100.0 por persona)
-        precio_por_persona = 100.0
-        precio = int(numero_personas) * precio_por_persona
+        if not paquete_id_str:
+            flash("No se recibió el ID del paquete.", "danger")
+            return redirect(url_for('dashboard.dashboardpaquetes'))
+
+        paquete_id = int(paquete_id_str)
+        fecha_reserva = request.form.get('fecha_reserva')
+        numero_personas = int(request.form.get('numero_personas'))
+
+        # Obtener JSONBin
+        response = requests.get(JSONBIN_URL_DESTINOS, headers=HEADEARS)
+        paquetes = response.json()['record']
+
+        # buscar el paquete 
+        paquete = next((p for p in paquetes if p["id"] == paquete_id), None)
+        if not paquete:
+            flash("Paquete no encontrado.", "danger")
+            return redirect(url_for('dashboard.dashboardpaquetes'))
+
+        nombre_destino = paquete["destino"]
+        duracion = paquete["duracion"]
+        mes = paquete["mes"]
+        incluye = ", ".join(paquete["incluye"])
+        precio_por_persona = float(paquete["precio_por_persona"])
+        imagen = paquete["imagen"]
+        precio_total = numero_personas * precio_por_persona
 
         try:
-            # Conectar a la base de datos MySQL (ajusta los valores según tu configuración)
             connection = mysql.connector.connect(
-                host='localhost',           # Servidor (localhost en XAMPP)
-                user='root',                # Usuario de MySQL (por defecto en XAMPP)
-                password='',                # Contraseña (vacía por defecto en XAMPP)
-                database='tourism' # Cambia por el nombre de tu base de datos
+                host='localhost',
+                user='root',
+                password='',
+                database='tourism'
             )
             cursor = connection.cursor()
 
-            # Consulta SQL para insertar la reserva
             sql = """
-            INSERT INTO reservas (nombre, email, paquete_id, nombre_destino, fecha_reserva, numero_personas, precio)
-            VALUES (%s, %s, NULL, %s, %s, %s, %s)
+            INSERT INTO reservas (
+                nombre, email, paquete_id, nombre_destino, duracion, mes, incluye,
+                fecha_reserva, numero_personas, precio_total, imagen
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-            # Ejecutar consulta
-            cursor.execute(sql, (nombre, email, nombre_destino, fecha_reserva, numero_personas, precio))
-            connection.commit()  # Confirmar cambios en la base de datos
-
-            # Notificar éxito
+            cursor.execute(sql, (
+                nombre, email, paquete_id, nombre_destino, duracion, mes, incluye,
+                fecha_reserva, numero_personas, precio_total, imagen
+            ))
+            connection.commit()
             flash('Reserva creada exitosamente.', 'success')
         except mysql.connector.Error as e:
-            # Manejar errores de MySQL
-            connection.rollback()  # Revertir cambios en caso de error
-            flash(f'Error al crear la reserva: {e}', 'danger')
+            connection.rollback()
+            flash(f'Error al guardar reserva: {e}', 'danger')
         finally:
-            # Cerrar conexión y cursor
             cursor.close()
             connection.close()
 
-        # Redirigir al listado de reservas
         return redirect(url_for('dashboard.dashboardlistareserva'))
 
-    # Si es GET, renderiza el formulario
-    return render_template('dashboard/reserva.html')
+    # GET - mostrar formulario con ID del paquete
+    paquete_id = request.args.get('paquete_id', type=int)
+    if not paquete_id:
+        flash("No se especificó un paquete.", "danger")
+        return redirect(url_for('dashboard.dashboardpaquetes'))
+
+    return render_template('dashboard/reserva.html', paquete_id=paquete_id)
 
 @dashboard_bp.route('/eliminar_reserva/<int:id>', methods=['POST'])
 def eliminar_reserva(id):
     try:
-        # Conectar a la base de datos MySQL
+        
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
@@ -127,7 +144,7 @@ def eliminar_reserva(id):
         )
         cursor = connection.cursor()
 
-        # Consulta SQL para eliminar la reserva
+        
         sql = "DELETE FROM reservas WHERE id = %s"
         cursor.execute(sql, (id,))
         connection.commit()

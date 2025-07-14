@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request, flash, jsonify, url_for, redirect,current_app
 import requests
 
+from flask import render_template
+
 from config import HEADEARS, JSONBIN_URL_DESTINOS
 import mysql.connector 
 
@@ -8,7 +10,13 @@ dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/')
 def dashboard():
-    return render_template('dashboard/nosotros.html')
+    # utiliza api de noticias
+    api_key = 'aee10bfb3de5452bbef0f575e9389a9f'
+    url = f'https://newsapi.org/v2/everything?q=turismo&language=es&pageSize=2&apiKey={api_key}'
+    response = requests.get(url)
+    noticias = response.json().get('articles', [])
+    return render_template('dashboard/nosotros.html', noticias=noticias)
+   
 
 @dashboard_bp.route('/destinos')
 def dashboarddestinos():
@@ -21,7 +29,6 @@ def dashboardpaquetes():
     if response.status_code == 200:
         data = response.json() 
         paquetes = data.get('record', []) 
-        #print(data) 
         return render_template('dashboard/paquetes.html', paquetes= paquetes)  
     else:
         return jsonify({"error": "Error al cargar los datos."}), response.status_code
@@ -76,11 +83,9 @@ def dashboardreserva():
         fecha_reserva = request.form.get('fecha_reserva')
         numero_personas = int(request.form.get('numero_personas'))
 
-        # Obtener JSONBin
         response = requests.get(JSONBIN_URL_DESTINOS, headers=HEADEARS)
         paquetes = response.json()['record']
 
-        # buscar el paquete 
         paquete = next((p for p in paquetes if p["id"] == paquete_id), None)
         if not paquete:
             flash("Paquete no encontrado.", "danger")
@@ -157,6 +162,8 @@ def eliminar_reserva(id):
         connection.close()
 
     return redirect(url_for('dashboard.dashboardlistareserva'))
+    
+
     
 @dashboard_bp.route('/test_mysql')
 def test_mysql():

@@ -3,17 +3,31 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <h2>Login Page</h2>
-    <div class="conteiner">  
-    <form method="POST">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow p-4 rounded-4" style="width: 100%; max-width: 400px;">
+    <h3 class="text-center text-primary fw-bold mb-4">Iniciar Sesión</h3>
+    
+    <form method="POST" action="{{ url_for('auth.login') }}">
+      
+      <div class="mb-3">
+        <label for="username" class="form-label">Usuario</label>
+        <input type="text" id="username" name="username" class="form-control" required>
+      </div>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
 
-        <button type="submit"><a href="{{ url_for('auth.login') }}" style="color: white; text-decoration: none;"> Ingresar...</a> </button>
-        
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </div>
     </form>
- </div>
+
+    <div class="text-center mt-4">
+      <span>¿No tenés cuenta?</span>
+      <a href="{{ url_for('auth.register') }}" class="btn btn-outline-primary btn-sm mt-2">Registrarse</a>
+    </div>
+  </div>
+</div>
 {% endblock %}

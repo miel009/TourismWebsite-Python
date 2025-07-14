@@ -1,20 +1,37 @@
-<!-- app/templates/auth/register.html -->
-
 {% extends "layoutDashboard.html" %}
 
 {% block content %}
+<!-- Contenedor principal con margen top y bottom -->
+<div class="container d-flex justify-content-center align-items-center py-5" style="min-height: calc(100vh - 80px);">
+  <div class="card shadow p-4 rounded-4 w-100" style="max-width: 400px;">
+    <h3 class="text-center text-primary fw-bold mb-4">Crear una cuenta</h3>
 
- <h2> Registro </h2>
- <div class="conteiner">
-<form action="{{ url_for('auth.register') }}" method="post">
-    <label for="username">Nombre de usuario:</label>
-    <input type="text" id="username" name="username" required>
     
-    <label for="password">Contraseña:</label>
-    <input type="password" id="password" name="password" required>
+    <form action="{{ url_for('auth.register') }}" method="post">
+      <div class="mb-3">
+        <label for="username" class="form-label">Nombre de usuario</label>
+        <input type="text" id="username" name="username" class="form-control" required>
+      </div>
 
-    <button type="submit">Registrarse</button>
-</form>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="confirm_password" class="form-label">Confirmar contraseña</label>
+        <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+      </div>
+    </form>
+
+    <div class="text-center mt-4">
+      <span>¿Ya tenés una cuenta?</span><br>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-outline-primary btn-sm mt-2">Volver al Login</a>
+    </div>
+  </div>
 </div>
-
 {% endblock %}

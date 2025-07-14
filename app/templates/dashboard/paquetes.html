@@ -1,32 +1,39 @@
 {% extends 'layoutDashboard.html' %}
 {% block content %}
-<h2>Paquetes Disponibles</h2>
+
+<div class="paquetes_img">
+    <img src="static/img/paq.webp" class="paquetes-img"" alt=" ...">
+</div>
 
 {% if paquetes %}
 <div class="container">
     <div class="row">
         {% for paquete in paquetes %}
 
-        <!-- <div><h2> {{paquete.titulo}} </h2> -->
         <div class="col-md-4 mb-4">
-            <div class="card-paquetes">
-                <div class="card-body">
-                    <img src={{paquete.imagen}} class="card-img-top" alt="cordoba">
-                    <div class="trip-duration text-muted"> {{ paquete.duracion }} - {{ paquete.mes}}</div>
-                    <h3 class="card-title">{{ paquete.destino }}</h3>
+            <div class="card-paquetes  rounded-4 shadow  shadow p-3">
+                <div class="card-bodyp-3 d-flex flex-column">
+                    <img src={{paquete.imagen}} class="card-img-top rounded-top-4" alt="cordoba">
+        
+                    <div class="trip-duration text-muted mt-3"> {{ paquete.duracion }} - {{ paquete.mes}}</div>
+                    <h3 class="card-title mt-2">{{ paquete.destino }}</h3>
                     <div class="trip-options">
-                        <span class="badge bg-secondary">{{ paquete.incluye | join(', ') }}</span>
+                        <span class="badge bg-secondary mt-1">{{ paquete.incluye | join(', ') }}</span>
                     </div>
-                    <div class="price mt-2"> $ {{ paquete.precio_por_persona | format_price}}</div>
-                    <div class="button mt-2 "> <a
-                            href="{{ url_for('dashboard.dashboardreserva',paquete_id=paquete.id, destino=paquete.destino, duracion=paquete.duracion, precio=paquete.precio_por_persona) }}"
-                            class="btn btn-primary me-md-2" style="color: white; text-decoration: none;">Lo quiero!</a>
-                        </button> </div>
+                    <div class="price mt-1"> $ {{ paquete.precio_por_persona | format_price}}</div>
+                    <div class="d-flex justify-content-between align-items-center mt-0">
+                        <span class="badge bg-success">Disponible</span>
+                       
+                        <a href="{{ url_for('dashboard.dashboardreserva', paquete_id=paquete.id, destino=paquete.destino, duracion=paquete.duracion, precio=paquete.precio_por_persona) }}"
+                            class="btn btn-primary rounded-4 px-4">
+                        Reservar  
+                        </a>
+                    </div>
 
                 </div> <!-- 5:card-body -->
             </div> <!-- 4:card-paquetes -->
         </div> <!-- 3: col-md-4 mb-4-->
-       
+
         {% endfor %}
     </div> <!-- row-->
 </div> <!-- container -->

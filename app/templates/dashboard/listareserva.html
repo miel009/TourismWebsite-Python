@@ -1,58 +1,33 @@
 {% extends 'layoutDashboard.html' %}
 
 {% block content %}
-<div class="container my-0">
-    <div id="contenedor1" class="row justify-content-center">
-        <div class="col-lg-12">
+<div class="container py-4">
+  <h1 class="text-center mb-5 fw-bold text-primary">Mis reservas</h1>
 
-            <h1 id="mis" class="text-center mb-4"> Mis reservas </h1>
-
-            <!-- Tabla -->
-            <table class="table table-striped table-bordered text-center">
-                <thead class="table-black ">
-                    <tr>
-                        <th>Paquete</th>
-                        <th>Pasajero</th>
-                        <th>Email</th>
-                        <th>Destino</th>
-                        <th>Fecha</th>
-                        <th>Número de Personas</th>
-                        <th>Precio</th>                       
-                        <th>accion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for reserva in reservas %}
-                    <tr>
-                        <td>
-                            <img src="{{ reserva[7] }}" alt="Imagen destino" style="width:100px; height:auto;">
-                        </td>
-                        <td>{{ reserva[1] }}</td> <!-- nombre -->
-                        <td>{{ reserva[2] }}</td> <!-- email -->
-                        <td>{{ reserva[3] }}</td> <!-- destino -->
-                        <td>{{ reserva[4] }}</td> <!-- fecha_reserva -->
-                        <td>{{ reserva[5] }}</td> <!-- numero_personas -->
-                        <td>${{ reserva[6]|format_price }}</td>
-                        <!-- precio -->
-                       
-                        <td>
-                            
-                            <form action="{{ url_for('dashboard.eliminar_reserva', id=reserva[0]) }}" method="POST"
-                                style="display:inline;">
-                                <button type="submit" class="btn btn-danger eliminar-btn">Eliminar</button>
-                            </form>
-                        </td>
-
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-            
-            <div id="formR" class="text-center mt-4">
-                <a href="{{ url_for('dashboard.dashboardreserva') }}" class="btn btn-primary">Volver</a>
-            </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for reserva in reservas %}
+    <div class="col">
+      <div class="card h-auto shadow rounded-4">
+        <img src="{{ reserva[7] }}" class="card-img-top rounded-top-4" style="height: 200px; object-fit: cover;" alt="Imagen destino" >
+        <div class="card-body p-4">
+          <h5 class="card-title fw-bold text-primary">{{ reserva[3] }}</h5> <!-- destino -->
+          <p class="card-text mb-1"><strong>Pasajero:</strong> {{ reserva[1] }}</p>
+          <p class="card-text mb-1"><strong>Email:</strong> {{ reserva[2] }}</p>
+          <p class="card-text mb-1"><strong>Fecha:</strong> {{ reserva[4] }}</p>
+          <p class="card-text mb-1"><strong>Personas:</strong> {{ reserva[5] }}</p>
+          <p class="card-text mb-1"><strong>Precio:</strong> ${{ reserva[6]|format_price }}</p>
+        <form action="{{ url_for('dashboard.eliminar_reserva', id=reserva[0]) }}" method="POST" >
+        <button type="submit" class="btn btn-outline-danger ">Eliminar</button>
+        </form>
         </div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('dashboard.dashboardreserva') }}" class="btn btn-primary">Volver</a>
+  </div>
+  
 </div>
 {% endblock %}

@@ -2,18 +2,24 @@
 
 {% block content %}
 
-<h1 class="text-center mb-0"> Generar reserva</h1>
-<form method="POST" action="{{ url_for('dashboard.dashboardreserva') }}">
-    <input type="hidden" name="paquete_id" value="{{ paquete_id }}">
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="date" name="fecha_reserva" required>
-    <input type="number" name="numero_personas" placeholder="Número de Personas" required>
-    <button type="submit" class="btn btn-primary">Confirmar reserva</button>
-</form>
+<h3 class="text-center text-primary fw-bold mb-20"> Generar reserva</h3>
+<div class="container">
+    
+    <form  class="card-paquetes rounded-4 shadow mt-5" method="POST" action="{{ url_for('dashboard.dashboardreserva') }}">
+        <input type="hidden" name="paquete_id" value="{{ paquete_id }}">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="telefono" placeholder="Teléfono" required>
+        <input class="p-2 rounded-1" type="date" name="fecha_reserva" required>
+        <input class="p-2 rounded-1" type="number" name="numero_personas" placeholder="Número de Personas" required>
+        <button class="mt-3 rounded-1" type="submit" class="btn btn-primary">Confirmar reserva</button>
+    </form>
+    
+</div>
 
 
-<div class="text-center mt-4">
+
+<div class="text-center mt-2">
     <a href="{{ url_for('dashboard.dashboardlistareserva') }}" class="btn btn-primary"> Mis reservas</a>
 </div>
 
